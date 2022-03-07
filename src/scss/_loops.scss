@@ -1,0 +1,35 @@
+@keyframes dropping-star {
+    from{ transform: translateY(random(10%));
+
+    }
+    to{
+        transform: translateY(random(100%));
+    }
+}
+
+@mixin move-dropping-stars ($duration){
+    animation: move;
+    animation-duration: $duration;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+@for $i from 1 through $items-count{
+    .shooting-stars:nth-child(#{$i}){
+background-color: lighten(orange, random(40));
+height: random(40) + vh;
+border-radius: 2rem ;
+// @if ($i % 2 == 0) even
+// @if ($i % 2 != 0) odd
+
+@if ($i % 2 != 0){
+    background-color: rgba(random(200) +10,
+    random(220)+$i,
+    random(100)+ random(150),
+    random(1)
+    );
+    align-self: end;
+}
+@include move-dropping-stars(random(3)+s)
+}
+} 
