@@ -1,4 +1,5 @@
 *{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -7,10 +8,23 @@ body{
     background-color: darkblue;
     display: flex;
     justify-content: right;
+    height: 100vh;
+    width: 100vw;
 }
 .shooting-stars{
-    width: 100vw;
-    height: 100vh;
-    transform: rotate(45deg);
+    width: 50%;
+    height: 100%;
+    transform: rotate(45deg) translatey(-20%);
+    display: flex;
+    justify-content: space-between;
+    
+    
+//shooting stars div
+    .item{
+        background-color: white;
+        width: 1px;
+        height: 2rem;
+        
+    }
   
 }
