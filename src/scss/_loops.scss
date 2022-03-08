@@ -10,7 +10,8 @@
 }
 @for $i from 1 through 30{
     .item:nth-child(#{$i}){
-        height: random(40) vh;
+        background-color: #{rgba(random(255), random(255),random(255))};
+        height:random(40) + vh;
         @include move-dropping-stars(random($i)+ 2s)
     }
 }
@@ -19,11 +20,11 @@
 
 @keyframes move {
     from{
-        opacity: 0;
+        opacity: 0.5;
     }
     to{
-        height: random(50) ;
-        width: 1px;
+        height: random(50) + vh ;
+        width: 2px;
         transform: translatey(100vw);
         opacity: 1;
     }
