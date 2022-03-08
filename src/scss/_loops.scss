@@ -10,9 +10,10 @@
 }
 @for $i from 1 through 30{
     .item:nth-child(#{$i}){
+        //generating random color for the shooting stars
         background-color: #{rgba(random(255), random(255),random(255))};
         height:random(40) + vh;
-        @include move-dropping-stars(random($i)+ 2s)
+        @include move-dropping-stars(random(3)+ s)
     }
 }
 // @if ($i % 2 == 0) even
@@ -20,12 +21,14 @@
 
 @keyframes move {
     from{
+        scale: 1;
         opacity: 0.5;
     }
     to{
-        height: random(50) + vh ;
+        height: random(500) + px ;
         width: 2px;
-        transform: translatey(100vw);
+        transform: translatey(30vh);
         opacity: 1;
+        scale: 1.5;
     }
 }
